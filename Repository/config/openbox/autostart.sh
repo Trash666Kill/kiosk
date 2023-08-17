@@ -8,6 +8,3 @@ feh --bg-fill /usr/share/wallpapers/default.jpg &
 xset -dpms &
 xset s off &
 #
-lxpanel &
-#virt-manager &
-compton &
