@@ -24,22 +24,11 @@ echo "7"
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
-su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox" 
-rm -v /etc/lightdm/lightdm-gtk-greeter.conf
-cp -v debian-swirl.png /usr/share/icons/default/
 cp -v default.jpg /usr/share/wallpapers/
-tar -xvf 01-Qogir.tar.xz -C /usr/share/icons > /dev/null 2>&1
-tar -xvf Arc-Dark.tar.xz -C /usr/share/themes > /dev/null 2>&1
-cp -v lightdm-gtk-greeter.conf /etc/lightdm/
-cp -v explorer.desktop /usr/share/applications/
 #Emperor
-rm -r /home/emperor/.config
-cp -v gtkrc-2.0 /home/emperor/.gtkrc-2.0
-cp -r config /home/emperor/.config
-chown emperor:emperor -R /home/emperor/.config
-chown emperor:emperor /home/emperor/.gtkrc-2.0
+su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox"
+su - kiosk -c "echo | cp autostart.sh /home/kiosk/.config/openbox"
 chown emperor:emperor /usr/share/wallpapers/default.jpg
-systemctl set-default multi-user.target
 #Cleaning up
 echo "**CLEANING UP**"
 apt autoremove -y
