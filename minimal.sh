@@ -24,6 +24,7 @@ echo "7"
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
+su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox" 
 rm -v /etc/lightdm/lightdm-gtk-greeter.conf
 cp -v debian-swirl.png /usr/share/icons/default/
 cp -v default.jpg /usr/share/wallpapers/
