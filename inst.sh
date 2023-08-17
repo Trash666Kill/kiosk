@@ -16,7 +16,7 @@ echo "1"
 apt install xorg openbox feh vim -y
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
-printf "PermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
+printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
 mkdir /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
 mkdir /etc/systemd/system/getty@tty1.service.d
