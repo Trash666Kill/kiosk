@@ -20,6 +20,8 @@ mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
 #Emperor
+rm /home/kiosk/.profile
+su - kiosk -c "echo | cp profile /home/kiosk/.profile"
 su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox"
 su - kiosk -c "echo | cp autostart.sh /home/kiosk/.config/openbox"
 su - kiosk -c "echo | chmod +x /home/kiosk/.config/openbox/autostart.sh"
