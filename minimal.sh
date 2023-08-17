@@ -28,7 +28,7 @@ cp -v default.jpg /usr/share/wallpapers/
 #Emperor
 su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox"
 su - kiosk -c "echo | cp autostart.sh /home/kiosk/.config/openbox"
-chown emperor:emperor /usr/share/wallpapers/default.jpg
+chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 #Cleaning up
 echo "**CLEANING UP**"
 apt autoremove -y
