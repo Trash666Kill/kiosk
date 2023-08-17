@@ -16,6 +16,8 @@ echo "1"
 apt install xorg openbox feh vim -y
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
+mkdir /mnt/Temp
+chown kiosk:kiosk /mnt/Temp
 mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
