@@ -22,6 +22,8 @@ apt install feh -y
 echo "7"
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
+mkdir /etc/systemd/system/getty@tty1.service.d
+cp autologin.conf /etc/systemd/system/getty@tty1.service.d
 rm -v /etc/lightdm/lightdm-gtk-greeter.conf
 cp -v debian-swirl.png /usr/share/icons/default/
 cp -v default.jpg /usr/share/wallpapers/
