@@ -30,6 +30,9 @@ su - kiosk -c "echo | cp autostart.sh /home/kiosk/.config/openbox"
 su - kiosk -c "echo | chmod +x /home/kiosk/.config/openbox/autostart.sh"
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 # VNC Server
+cp x11vnc.service /etc/systemd/system/
+systemctl restart daemon-reload
+systemctl enable --now x11vnc
 echo "Enter the VNC remote access password"
 x11vnc -storepasswd
 #Cleaning up
