@@ -22,6 +22,7 @@ cp -v default.jpg /usr/share/wallpapers/
 #Emperor
 su - kiosk -c "echo | mkdir -p /home/kiosk/.config/openbox"
 su - kiosk -c "echo | cp autostart.sh /home/kiosk/.config/openbox"
+su - kiosk -c "echo | chmod +x /home/kiosk/.config/openbox/autostart.sh"
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 #Cleaning up
 echo "**CLEANING UP**"
