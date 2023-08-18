@@ -8,3 +8,7 @@ feh --bg-fill /usr/share/wallpapers/default.jpg &
 xset -dpms &
 xset s off &
 #
+#
+sleep 30
+/usr/bin/google-chrome --kiosk --start-maximized "https://google.com" --no-default-browser-check --noerrdialogs --no-message-box --disable-desktop-notifications --allow-running-insecure-content --disk-cache-size=0 &
+#
