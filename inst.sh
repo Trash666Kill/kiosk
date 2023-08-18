@@ -16,6 +16,7 @@ apt install --no-install-recommends xorg lightdm openbox x11vnc feh vim -y
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
+systemctl set-default graphical.target
 mkdir -v /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
 cp -v default.jpg /usr/share/wallpapers
