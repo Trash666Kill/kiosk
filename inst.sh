@@ -18,8 +18,6 @@ echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
 mkdir -v /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
-mkdir -v /etc/systemd/system/getty@tty1.service.d
-cp -v autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
 #Emperor
 groupadd -r autologin
