@@ -12,7 +12,7 @@ apt update && apt upgrade -y
 #DE
 echo "**INSTALLING THE DESKTOP ENVIRONMENT**"
 echo "1"
-apt install --no-install-recommends xorg lightdm openbox feh vim -y
+apt install --no-install-recommends xorg lightdm openbox x11vnc feh vim -y
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
