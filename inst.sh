@@ -18,6 +18,7 @@ echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
 systemctl set-default graphical.target
 mkdir -v /mnt/Temp
+mkdir -v /root/Temp
 chown kiosk:kiosk /mnt/Temp
 mkdir /usr/share/wallpapers
 cp -v default.jpg /usr/share/wallpapers
