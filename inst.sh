@@ -24,6 +24,7 @@ cp -v default.jpg /usr/share/wallpapers/
 #Emperor
 rm /home/kiosk/.profile
 cp profile /home/kiosk/.profile
+chown kiosk:kiosk /home/kiosk/.profile
 su - kiosk -c "mkdir -p /home/kiosk/.config/openbox"
 cp autostart.sh /home/kiosk/.config/openbox
 chmod +x /home/kiosk/.config/openbox/autostart.sh
