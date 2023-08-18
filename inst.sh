@@ -22,6 +22,8 @@ mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
 #Emperor
+groupadd -r autologin
+gpasswd -a kiosk autologin
 rm /home/emperor/.profile
 cp profile /home/kiosk/.profile
 chown kiosk:kiosk /home/kiosk/.profile
