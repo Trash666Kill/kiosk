@@ -32,6 +32,7 @@ cp -v autostart.sh /home/kiosk/.config/openbox
 chmod +x /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
+su - kiosk -c "mkdir -pv /home/kiosk/Temp"
 # VNC Server
 cp -v x11vnc.service /etc/systemd/system
 systemctl daemon-reload
