@@ -21,7 +21,8 @@ chown kiosk:kiosk /mnt/Temp
 cp -v default.jpg /usr/share/wallpapers
 rm -v /etc/lightdm/lightdm.conf
 cp -v lightdm.conf /etc/lightdm
-#Emperor
+#Kiosk
+passwd -d kiosk
 groupadd -r autologin
 gpasswd -a kiosk autologin
 rm -v /home/kiosk/.profile
