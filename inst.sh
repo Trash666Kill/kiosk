@@ -19,6 +19,7 @@ printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /e
 systemctl set-default graphical.target
 mkdir -v /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
+mkdir /usr/share/wallpapers
 cp -v default.jpg /usr/share/wallpapers
 rm -v /etc/lightdm/lightdm.conf
 cp -v lightdm.conf /etc/lightdm
@@ -26,9 +27,6 @@ cp -v lightdm.conf /etc/lightdm
 passwd -d kiosk
 groupadd -r autologin
 gpasswd -a kiosk autologin
-rm -v /home/kiosk/.profile
-cp -v profile /home/kiosk/.profile
-chown kiosk:kiosk /home/kiosk/.profile
 su - kiosk -c "mkdir -pv /home/kiosk/.config/openbox"
 cp -v autostart.sh /home/kiosk/.config/openbox
 chmod +x /home/kiosk/.config/openbox/autostart.sh
