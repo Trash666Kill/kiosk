@@ -16,24 +16,24 @@ apt install --no-install-recommends xorg lightdm openbox feh vim -y
 #Conf DE
 echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
-mkdir /mnt/Temp
+mkdir -v /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
-mkdir /etc/systemd/system/getty@tty1.service.d
-cp autologin.conf /etc/systemd/system/getty@tty1.service.d
+mkdir -v /etc/systemd/system/getty@tty1.service.d
+cp -v autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
 #Emperor
 groupadd -r autologin
 gpasswd -a kiosk autologin
-rm /home/kiosk/.profile
-cp profile /home/kiosk/.profile
+rm -v /home/kiosk/.profile
+cp -v profile /home/kiosk/.profile
 chown kiosk:kiosk /home/kiosk/.profile
-su - kiosk -c "mkdir -p /home/kiosk/.config/openbox"
-cp autostart.sh /home/kiosk/.config/openbox
+su - kiosk -c "mkdir -pv /home/kiosk/.config/openbox"
+cp -v autostart.sh /home/kiosk/.config/openbox
 chmod +x /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 # VNC Server
-cp x11vnc.service /etc/systemd/system/
+cp -v x11vnc.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable --now x11vnc
 echo "Enter the VNC remote access password"
