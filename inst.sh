@@ -22,12 +22,13 @@ mkdir /etc/systemd/system/getty@tty1.service.d
 cp autologin.conf /etc/systemd/system/getty@tty1.service.d
 cp -v default.jpg /usr/share/wallpapers/
 #Emperor
-rm /home/kiosk/.profile
+rm /home/emperor/.profile
 cp profile /home/kiosk/.profile
 chown kiosk:kiosk /home/kiosk/.profile
 su - kiosk -c "mkdir -p /home/kiosk/.config/openbox"
 cp autostart.sh /home/kiosk/.config/openbox
 chmod +x /home/kiosk/.config/openbox/autostart.sh
+chown kiosk:kiosk /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 # VNC Server
 cp x11vnc.service /etc/systemd/system/
