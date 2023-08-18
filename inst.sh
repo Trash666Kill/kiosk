@@ -38,11 +38,12 @@ chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 cp -v x11vnc.service /etc/systemd/system
 systemctl daemon-reload
 systemctl enable --now x11vnc
-echo "Enter the VNC remote access password"
-x11vnc -storepasswd
 #Cleaning up
 echo "**CLEANING UP**"
 apt autoremove -y
+#
+echo "Enter the VNC remote access password"
+x11vnc -storepasswd
 #End
 echo "End"
 #
