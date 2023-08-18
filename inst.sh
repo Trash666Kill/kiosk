@@ -18,7 +18,9 @@ echo "**SETTING UP THE DESKTOP ENVIRONMENT**"
 printf "Port 26\nPermitRootLogin yes\nDenyUsers kiosk\nDenyGroups kiosk\n" >> /etc/ssh/sshd_config
 mkdir -v /mnt/Temp
 chown kiosk:kiosk /mnt/Temp
-cp -v default.jpg /usr/share/wallpapers/
+cp -v default.jpg /usr/share/wallpapers
+rm -v /etc/lightdm/lightdm.conf
+cp -v lightdm.conf /etc/lightdm
 #Emperor
 groupadd -r autologin
 gpasswd -a kiosk autologin
@@ -31,7 +33,7 @@ chmod +x /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /home/kiosk/.config/openbox/autostart.sh
 chown kiosk:kiosk /usr/share/wallpapers/default.jpg
 # VNC Server
-cp -v x11vnc.service /etc/systemd/system/
+cp -v x11vnc.service /etc/systemd/system
 systemctl daemon-reload
 systemctl enable --now x11vnc
 echo "Enter the VNC remote access password"
