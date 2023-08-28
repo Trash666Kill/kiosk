@@ -1,5 +1,6 @@
 # Screen settings
 #xrandr -s 1440x900 &
+#xrandr --output HDMI-1 --mode 1400x900
 #xrandr --output DP-2 --rotate left &
 #xrandr --output HDMI-1 --same-as HDMI-2 &
 # Wallpaper
