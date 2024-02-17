@@ -5,6 +5,7 @@
 #xrandr --output HDMI-1 --same-as HDMI-2 &
 # Wallpaper
 feh --bg-fill /usr/share/wallpapers/default.jpg &
+unclutter &
 # Always on
 xset -dpms &
 xset s off &
