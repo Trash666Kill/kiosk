@@ -1,10 +1,13 @@
 [Unit]
 Description=VNC Server
-After=multi-user.target network.target
+After=graphical.target network.target
+Wants=graphical.target
 
 [Service]
+Type=simple
 Restart=always
-ExecStart=/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /root/.vnc/passwd -rfbport 5900 -shared
+RestartSec=3
+ExecStart=/usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /root/.vnc/passwd -rfbport 5900 -shared
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
