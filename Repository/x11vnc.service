@@ -1,13 +1,13 @@
 [Unit]
 Description=VNC Server
-After=graphical.target network.target
+After=graphical.target lightdm.service network.target
 Wants=graphical.target
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /root/.vnc/passwd -rfbport 5900 -shared
+ExecStart=/usr/bin/x11vnc -display :0 -auth /var/run/lightdm/root/:0 -forever -loop -noxdamage -repeat -rfbauth /root/.vnc/passwd -rfbport 5900 -shared
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target
